@@ -1,2 +1,2 @@
-# larex_tabular
-makes tatex table from csv type file
+# latex_tabular
+makes latex table from csv type file

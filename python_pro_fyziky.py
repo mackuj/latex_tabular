@@ -14,7 +14,7 @@ def addline(line, o, delimiter):
     o.write(outputstr)
 
 
-def head_settup(line, o, delimiter):
+def head_setup(line, o, delimiter):
     colum_num = 0
     colum_str = "c|"
     for char in line:
@@ -25,7 +25,7 @@ def head_settup(line, o, delimiter):
     o.write("\\begin{tabular}{|" + colum_str + "}\n")
     o.write("\\hline\n")
 
-def end_settup(o):
+def end_setup(o):
     o.write("\\end{tabular}\n")
 
 def newfilename(filename):
@@ -46,17 +46,17 @@ def analysis(filename, delimiter):
 
     for line in f.readlines():
         if firstline == True:
-            head_settup(line, o, delimiter)
+            head_setup(line, o, delimiter)
             addline(line, o, delimiter)
             firstline = False
         else:
             addline(line, o, delimiter)
-    end_settup(o)
+    end_setup(o)
 
-    f.close()  
-    o.close()               
+    f.close()
+    o.close()
 
-def main():                                                         
+def main():
     input_txt = input("Input file name (path): ")
     delimiter = input("and input data separator: ")
 
