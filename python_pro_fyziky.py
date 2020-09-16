@@ -48,9 +48,7 @@ def analysis(filename, delimiter):
         if firstline == True:
             head_settup(line, o, delimiter)
             addline(line, o, delimiter)
-            print("neco\n")
             firstline = False
-            print("neco\n")
         else:
             addline(line, o, delimiter)
     end_settup(o)
@@ -58,11 +56,11 @@ def analysis(filename, delimiter):
     f.close()  
     o.close()               
 
-def main():                                                          # Získání vstupu od uživatele
-    vstup_txt = input("Zadejte jméno souboru (cestu): ")
-    delimiter = input("a zadejte oddělovací znak: ")
+def main():                                                         
+    input_txt = input("Input file name (path): ")
+    delimiter = input("and input data separator: ")
 
-    analysis(vstup_txt, delimiter)
+    analysis(input_txt, delimiter)
 
 if __name__ == '__main__':
     main()
